@@ -1,0 +1,158 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1459719635871831704
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1459719635871831710}
+  - component: {fileID: 1459719635871831705}
+  - component: {fileID: 4623828818833413801}
+  - component: {fileID: 1315983696058527084}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1459719635871831710
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1459719635871831704}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1459719635871831705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1459719635871831704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53ffb14636dccff4294220d191f53107, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fishPrefab: {fileID: -1641318405314009843, guid: 57132bf1ccab8214c93aad5ed595222c, type: 3}
+  _fishTypes:
+  - price: 20
+    fishCount: 10
+    minLenght: -35
+    maxLenght: -80
+    colliderRadius: 0.2
+    sprite: {fileID: 21300000, guid: 03e1bfd4a81a6c54c836317f16e2353f, type: 3}
+  - price: 30
+    fishCount: 10
+    minLenght: -35
+    maxLenght: -50
+    colliderRadius: 0.2
+    sprite: {fileID: 21300000, guid: 11b40adfb52d99944a5ad968fe6f2e53, type: 3}
+  - price: 40
+    fishCount: 10
+    minLenght: -35
+    maxLenght: -60
+    colliderRadius: 0.2
+    sprite: {fileID: 21300000, guid: 1e8bc749f722e7d47987c73df5773224, type: 3}
+  - price: 50
+    fishCount: 10
+    minLenght: -30
+    maxLenght: -60
+    colliderRadius: 0.2
+    sprite: {fileID: 21300000, guid: 6389f4d335c788e49a441c63ded4e864, type: 3}
+  - price: 60
+    fishCount: 10
+    minLenght: -35
+    maxLenght: -95
+    colliderRadius: 0
+    sprite: {fileID: 21300000, guid: a1257969f0d708148848bd1b2aafe3e8, type: 3}
+  - price: 70
+    fishCount: 10
+    minLenght: -35
+    maxLenght: -95
+    colliderRadius: 0.2
+    sprite: {fileID: 21300000, guid: 25cafca743c8f084bbb82df32dea9d7c, type: 3}
+  - price: 80
+    fishCount: 10
+    minLenght: -35
+    maxLenght: -50
+    colliderRadius: 0.2
+    sprite: {fileID: 21300000, guid: 0b57adcb6d28b5d4eb866e3450dda902, type: 3}
+  - price: 90
+    fishCount: 10
+    minLenght: -35
+    maxLenght: -60
+    colliderRadius: 0.2
+    sprite: {fileID: 21300000, guid: e0e3d2290788e2645be7c8558edd8e94, type: 3}
+  - price: 100
+    fishCount: 10
+    minLenght: -60
+    maxLenght: -70
+    colliderRadius: 0.2
+    sprite: {fileID: 21300000, guid: 47e69da71f87fe24e895851199340c44, type: 3}
+  - price: 110
+    fishCount: 10
+    minLenght: -70
+    maxLenght: -80
+    colliderRadius: 0.2
+    sprite: {fileID: 21300000, guid: 62b1ddaf3f595f74bb38fb6b4475b378, type: 3}
+--- !u!114 &4623828818833413801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1459719635871831704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 182253bd2238ef74bb981447d24c835f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  length: 0
+  lengthCost: 0
+  strength: 0
+  strengthCost: 0
+  offlineEarning: 0
+  offlineEarningCost: 0
+  wallet: 0
+  totalGain: 0
+  costs: 7800000097000000c5000000fa000000440100009e01000019020000af0200007c03000079040000cc05000077070000af0900007c0c000034100000ef1400002a1b000037230000a72d0000
+--- !u!114 &1315983696058527084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1459719635871831704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1770d21b6fade594b8e7e31f60289b78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endScreen: {fileID: 0}
+  gameScreen: {fileID: 0}
+  mainScreen: {fileID: 0}
+  returnScreen: {fileID: 0}
+  lengthButton: {fileID: 0}
+  strengthButton: {fileID: 0}
+  offlineButton: {fileID: 0}
+  lengthCostText: {fileID: 0}
+  lengthValueText: {fileID: 0}
+  strengthCostText: {fileID: 0}
+  strengthValueText: {fileID: 0}
+  offlineCostText: {fileID: 0}
+  offlineValueText: {fileID: 0}
+  gameScreenMoney: {fileID: 0}
+  endScreenMoney: {fileID: 0}
+  returnScreenMoney: {fileID: 0}

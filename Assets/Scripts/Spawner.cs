@@ -30,7 +30,7 @@ public class Spawner : MonoBehaviour
             while (num < _fishTypes[i].fishCount)
             {
                 Fish _fish = UnityEngine.Object.Instantiate<Fish>(_fishPrefab);
-                _fish.type = _fishTypes[i];
+                _fish.Type = _fishTypes[i];
                 _fish.ResetFish();
                 num++;
             }

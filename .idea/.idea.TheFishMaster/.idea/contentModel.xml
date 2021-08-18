@@ -23,6 +23,9 @@
         <e p="Scripts" t="Include">
           <e p="Fish.cs" t="Include" />
           <e p="Hook.cs" t="Include" />
+          <e p="IdleManager.cs" t="Include" />
+          <e p="ScreenManager.cs" t="Include" />
+          <e p="Screens.cs" t="Include" />
           <e p="Spawner.cs" t="Include" />
         </e>
       </e>

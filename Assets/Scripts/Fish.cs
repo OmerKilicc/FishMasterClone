@@ -8,21 +8,8 @@ using Random = System.Random;
 
 public class Fish : MonoBehaviour
 {
-    [Serializable]
-    public class FishType
-    {
-        public int price;
-        
-        public float fishCount;
-
-        public float minLenght = 30;
-
-        public float maxLenght = 50;
-        
-        public float colliderRadius;
-        
-        public Sprite sprite;
-    }
+    
+    private Fish.FishType type;
     
     CircleCollider2D coll;
     
@@ -32,7 +19,7 @@ public class Fish : MonoBehaviour
     
     Tweener _tweener;
 
-    public Fish.FishType type
+    public Fish.FishType Type
     {
         get
         {
@@ -51,16 +38,8 @@ public class Fish : MonoBehaviour
         coll = GetComponent<CircleCollider2D>();
         _renderer = GetComponentInChildren<SpriteRenderer>();
         sceenLeft = Camera.main.ScreenToWorldPoint(Vector3.zero).x;
-
     }
-
-    private void Update()
-    {
-        
-        
-    }
-
-
+    
     public void ResetFish()
     {
         if (_tweener != null)
@@ -84,22 +63,34 @@ public class Fish : MonoBehaviour
         float num3 = 3;
         float delay = UnityEngine.Random.Range(0, 2 * num3);
         //infiinty loop
-        _tweener = transform.DOMove(Vect, num3, false).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.Linear).SetDelay(delay)
-            .OnStepComplete(
-                delegate
-                {
-                    Vector3 localScale = transform.localScale;
-                    localScale.x = -localScale.x;
-                    transform.localScale = localScale;
-                });
+        _tweener = transform.DOMove(Vect, num3, false).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.Linear).SetDelay(delay).OnStepComplete(delegate
+        {
+            Vector3 localScale = transform.localScale; 
+            localScale.x = -localScale.x; 
+            transform.localScale = localScale;
+        });
     }
 
-    void Hooked()
+    public void Hooked()
     {
         coll.enabled = false;
         _tweener.Kill(false);
     }
 
-    
+    [Serializable]
+    public class FishType
+    {
+        public int price;
+        
+        public float fishCount;
+
+        public float minLenght = 30;
+
+        public float maxLenght = 50;
+        
+        public float colliderRadius;
+        
+        public Sprite sprite;
+    }
     
 }

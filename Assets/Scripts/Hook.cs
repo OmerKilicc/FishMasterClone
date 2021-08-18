@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEditor;
 
 public class Hook : MonoBehaviour
 {
@@ -16,11 +17,13 @@ public class Hook : MonoBehaviour
     private bool canMove = true;
     private Tweener cameraTween;
     
+    List<Fish> hookedFishes = new List<Fish>();
     //Awake is called when the script instance is being loaded.
     void Awake()
     {
         mainCamera = Camera.main;
         _circleCollider2D = GetComponent<CircleCollider2D>();
+        
     }
 
     // Start is called before the first frame update
@@ -44,9 +47,9 @@ public class Hook : MonoBehaviour
 
     public void StartFishing()
     {
-        //TODO Idle Manager
-        length = -50;
-        strength = 3;
+
+        length = IdleManager.instance.length - 20;
+        strength = IdleManager.instance.strength;
         fishCount = 0;
 
         float time = (-length) * 0.1f;
@@ -71,10 +74,10 @@ public class Hook : MonoBehaviour
             });
         });
 
-        //Screen(GAME)
+        ScreenManager.instance.ChangeScreen(Screens.GAME);
         _circleCollider2D.enabled = false;
         canMove = true;
-        //clear
+        hookedFishes.Clear();
     }
 
     void StopFishing()
@@ -93,10 +96,45 @@ public class Hook : MonoBehaviour
         {
             transform.position = Vector2.down * 6;
             _circleCollider2D.enabled = true;
-            int num = 0;
-            //Clearing out the hook from the fishes
-            //Idle Manager Totalgain = num;
-            //Screenmanager End Screen
+            int totalGain = 0;
+            for (int i = 0; i < hookedFishes.Count; i++)
+            {
+                hookedFishes[i].transform.SetParent(null);
+                hookedFishes[i].ResetFish();
+                totalGain += hookedFishes[i].Type.price;
+            }
+
+            IdleManager.instance.totalGain = totalGain;
+            ScreenManager.instance.ChangeScreen(Screens.END);
+            
         });
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Fish") && fishCount != strength)
+        {
+            fishCount++;
+            Fish component = other.GetComponent<Fish>();
+            component.Hooked();
+            hookedFishes.Add(component);
+            //Hook'u parent yapıyor ve taşıyor
+            other.transform.SetParent(transform);
+            other.transform.position = hookedTransform.position;
+            other.transform.rotation = hookedTransform.rotation;
+            other.transform.localScale = Vector3.one;
+
+            //
+            other.transform.DOShakeRotation(5, Vector3.forward * 45, 10, 90).SetLoops(1,LoopType.Yoyo).OnComplete(
+                delegate
+                {
+                    other.transform.rotation = Quaternion.identity;
+                    
+                });
+            if (fishCount == strength)
+            {
+                StopFishing();
+            }
+        }
     }
 }
