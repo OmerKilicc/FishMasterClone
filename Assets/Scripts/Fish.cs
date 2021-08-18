@@ -49,9 +49,9 @@ public class Fish : MonoBehaviour
     void Awake()
     {
         coll = GetComponent<CircleCollider2D>();
-        _renderer = GetComponent<SpriteRenderer>();
+        _renderer = GetComponentInChildren<SpriteRenderer>();
         sceenLeft = Camera.main.ScreenToWorldPoint(Vector3.zero).x;
-        ResetFish();
+
     }
 
     private void Update()
@@ -61,7 +61,7 @@ public class Fish : MonoBehaviour
     }
 
 
-    void ResetFish()
+    public void ResetFish()
     {
         if (_tweener != null)
         {

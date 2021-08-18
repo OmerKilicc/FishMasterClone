@@ -1174,3 +1174,108 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2014524634
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2014524636}
+  - component: {fileID: 2014524635}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2014524635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2014524634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53ffb14636dccff4294220d191f53107, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fishPrefab: {fileID: -1641318405314009843, guid: 57132bf1ccab8214c93aad5ed595222c, type: 3}
+  _fishTypes:
+  - price: 20
+    fishCount: 100
+    minLenght: -15
+    maxLenght: -80
+    colliderRadius: 0.2
+    sprite: {fileID: 21300000, guid: 03e1bfd4a81a6c54c836317f16e2353f, type: 3}
+  - price: 30
+    fishCount: 90
+    minLenght: -20
+    maxLenght: -50
+    colliderRadius: 0
+    sprite: {fileID: 21300000, guid: 11b40adfb52d99944a5ad968fe6f2e53, type: 3}
+  - price: 40
+    fishCount: 80
+    minLenght: -25
+    maxLenght: -60
+    colliderRadius: 0
+    sprite: {fileID: 21300000, guid: 1e8bc749f722e7d47987c73df5773224, type: 3}
+  - price: 50
+    fishCount: 70
+    minLenght: -30
+    maxLenght: -60
+    colliderRadius: 0
+    sprite: {fileID: 21300000, guid: 6389f4d335c788e49a441c63ded4e864, type: 3}
+  - price: 60
+    fishCount: 60
+    minLenght: -30
+    maxLenght: 0
+    colliderRadius: 0
+    sprite: {fileID: 21300000, guid: a1257969f0d708148848bd1b2aafe3e8, type: 3}
+  - price: 70
+    fishCount: 50
+    minLenght: -30
+    maxLenght: -50
+    colliderRadius: 0
+    sprite: {fileID: 21300000, guid: 25cafca743c8f084bbb82df32dea9d7c, type: 3}
+  - price: 80
+    fishCount: 40
+    minLenght: -30
+    maxLenght: -50
+    colliderRadius: 0
+    sprite: {fileID: 21300000, guid: 0b57adcb6d28b5d4eb866e3450dda902, type: 3}
+  - price: 90
+    fishCount: 30
+    minLenght: -50
+    maxLenght: -60
+    colliderRadius: 0
+    sprite: {fileID: 21300000, guid: e0e3d2290788e2645be7c8558edd8e94, type: 3}
+  - price: 100
+    fishCount: 20
+    minLenght: -60
+    maxLenght: -70
+    colliderRadius: 0
+    sprite: {fileID: 21300000, guid: 47e69da71f87fe24e895851199340c44, type: 3}
+  - price: 110
+    fishCount: 10
+    minLenght: -70
+    maxLenght: -80
+    colliderRadius: 0
+    sprite: {fileID: 21300000, guid: 62b1ddaf3f595f74bb38fb6b4475b378, type: 3}
+--- !u!4 &2014524636
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2014524634}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
